@@ -29,26 +29,26 @@
           />
         </div>
 
-        <h1>Pedro Fires</h1>
-        <a href="https://github.com/pedrofires">
+        <h1 id="userName"></h1>
+        <a id="githubLink" href="https://github.com/pedrofires" target="_blank">
           <img src="images/githubIcon.svg" alt="Ícone do GitHub" />
-          pedrofires</a
-        >
+          pedrofires
+        </a>
 
         <p>A student focused on learning programming for web</p>
 
-        <ul>
+        <ul id="socialLinks">
           <!--<li>
             <a href="https://youtube.com" target="_blank">
               <img src="/images/youtube.svg" alt="Ícone do youtube"
             /></a>
           </li>-->
-          <li>
+          <li class="instagram">
             <a href="https://instagram.com/_pedrofogos" target="_blank">
               <img src="/images/instagram.svg" alt="Ícone do instagram"
             /></a>
           </li>
-          <li>
+          <li class="facebook">
             <a href="https://facebook.com/pedrofires" target="_blank">
               <img src="/images/facebook.svg" alt="Ícone do facebook"
             /></a>
@@ -61,5 +61,27 @@
         </ul>
       </div>
     </main>
+
+    <script>
+      const socialMediasLinks = {
+        github: 'pedrofires',
+        facebook: 'pedrofires',
+        instagram: '_pedrofogos',
+        name: 'Pedro Fires'
+      }
+
+      function changeSocialMediaLinks() {
+        for (let li of socialLinks.children) {
+          //indo no filho do sociallinks(o id no html)
+          const socialName = li.getAttribute('class') //pegando o atributo class de li
+          console.log(socialName)
+          li.children[0].href = `https://${socialName}.com/${socialMediasLinks[socialName]}`
+          //fazendo o social name como variável interavel no objeto social media links
+        }
+        userName.textContent = socialMediasLinks.name
+      }
+
+      changeSocialMediaLinks()
+    </script>
   </body>
 </html>
