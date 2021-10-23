@@ -24,18 +24,20 @@
             />
           </span>
           <img
+            id="userPhoto"
             src="https://avatars.githubusercontent.com/u/56171798?v=4"
             alt="Foto Pessoal"
           />
         </div>
 
         <h1 id="userName"></h1>
-        <a id="githubLink" href="https://github.com/pedrofires" target="_blank">
-          <img src="images/githubIcon.svg" alt="Ícone do GitHub" />
-          pedrofires
+        <a id="userLink" href="https://github.com/maykbrito" target="_blank">
+          <img src="images/githubIcon.svg" alt="Ícone do GitHub" /><span
+            id="userLogin"
+          ></span>
         </a>
 
-        <p>A student focused on learning programming for web</p>
+        <p id="userBio">A student focused on learning programming for web</p>
 
         <ul id="socialLinks">
           <!--<li>
@@ -62,26 +64,6 @@
       </div>
     </main>
 
-    <script>
-      const socialMediasLinks = {
-        github: 'pedrofires',
-        facebook: 'pedrofires',
-        instagram: '_pedrofogos',
-        name: 'Pedro Fires'
-      }
-
-      function changeSocialMediaLinks() {
-        for (let li of socialLinks.children) {
-          //indo no filho do sociallinks(o id no html)
-          const socialName = li.getAttribute('class') //pegando o atributo class de li
-          console.log(socialName)
-          li.children[0].href = `https://${socialName}.com/${socialMediasLinks[socialName]}`
-          //fazendo o social name como variável interavel no objeto social media links
-        }
-        userName.textContent = socialMediasLinks.name
-      }
-
-      changeSocialMediaLinks()
-    </script>
+    <script src="./main.js"></script>
   </body>
 </html>
